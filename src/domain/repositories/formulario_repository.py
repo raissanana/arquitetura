@@ -1,32 +1,27 @@
+# src/domain/repositories/formulario_repository.py
 from abc import ABC, abstractmethod
-from typing import List, Optional
+from typing import List
 from ..entities.formulario import Formulario
 from ..entities.resposta import Resposta
 
 class FormularioRepository(ABC):
-    """Interface para o repositório de formulários"""
     
     @abstractmethod
     def salvar_formulario(self, formulario: Formulario) -> Formulario:
-        """Salva um formulário no banco"""
+        """Salva um formulário no banco (POST /formularios)"""
         pass
     
     @abstractmethod
     def listar_formularios(self) -> List[Formulario]:
-        """Lista todos os formulários"""
-        pass
-    
-    @abstractmethod
-    def buscar_formulario_por_id(self, formulario_id: str) -> Optional[Formulario]:
-        """Busca um formulário por ID"""
+        """Lista todos os formulários (GET /formularios)"""
         pass
     
     @abstractmethod
     def salvar_resposta(self, resposta: Resposta) -> Resposta:
-        """Salva uma resposta no banco"""
+        """Salva uma resposta no banco (POST /respostas)"""
         pass
     
     @abstractmethod
     def listar_respostas(self) -> List[Resposta]:
-        """Lista todas as respostas"""
+        """Lista todas as respostas (GET /respostas)"""
         pass
