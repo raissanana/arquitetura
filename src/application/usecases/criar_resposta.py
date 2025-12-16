@@ -1,14 +1,14 @@
 # src/application/usecases/criar_resposta.py
-from ..dto.formulario_dto import CriarRespostaInputDTO, CriarRespostaOutputDTO
+from application.dto.resposta_dto import CriarRespostaInputDTO, CriarRespostaOutputDTO
 from domain.entities.resposta import Resposta
-from domain.repositories.formulario_repository import FormularioRepository
+from domain.repositories.resposta_repository import RespostaRepository  # Importe a interface correta
 from .base_usecase import UseCase
 
 class CriarRespostaUseCase(UseCase[CriarRespostaInputDTO, CriarRespostaOutputDTO]):
     """Use Case para criar resposta"""
     
-    def __init__(self, formulario_repository: FormularioRepository):
-        self.formulario_repository = formulario_repository
+    def __init__(self, resposta_repository: RespostaRepository):  # Tipo correto
+        self.resposta_repository = resposta_repository
     
     def execute(self, input_dto: CriarRespostaInputDTO) -> CriarRespostaOutputDTO:
         # Cria a entidade Resposta
@@ -18,8 +18,8 @@ class CriarRespostaUseCase(UseCase[CriarRespostaInputDTO, CriarRespostaOutputDTO
             agente_nome=input_dto.agente_nome
         )
         
-        # Salva no repositório
-        resposta_salva = self.formulario_repository.salvar_resposta(resposta)
+        # Salva no repositório correto
+        resposta_salva = self.resposta_repository.salvar_resposta(resposta)
         
         # Retorna DTO de saída
         return CriarRespostaOutputDTO(
