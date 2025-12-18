@@ -1,4 +1,3 @@
-# src/application/usecases/listar_formularios.py
 from ..dto.formulario_dto import ListarFormulariosOutputDTO
 from domain.repositories.formulario_repository import FormularioRepository
 from .base_usecase import UseCase
@@ -10,7 +9,7 @@ class ListarFormulariosUseCase(UseCase[None, ListarFormulariosOutputDTO]):
         self.formulario_repository = formulario_repository
     
     def execute(self, input_dto: None = None) -> ListarFormulariosOutputDTO:
-        formularios = self.formulario_repository.listar_formularios()  # ✅ PLURAL
+        formularios = self.formulario_repository.listar_formularios()
         
         # Converte entidades para dicionários
         formularios_dict = []

@@ -1,4 +1,3 @@
-# infrastructure/persistence/neondb/resposta_repository.py
 import json
 from typing import List
 from domain.entities.resposta import Resposta

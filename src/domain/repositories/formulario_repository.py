@@ -1,4 +1,3 @@
-# src/domain/repositories/formulario_repository.py
 from abc import ABC, abstractmethod
 from typing import List
 from domain.entities.formulario import Formulario
@@ -11,6 +10,6 @@ class FormularioRepository(ABC):
         pass
     
     @abstractmethod
-    def listar_formularios(self) -> List[Formulario]:  # ✅ PLURAL
+    def listar_formularios(self) -> List[Formulario]:
         """Lista todos os formulários"""
         pass

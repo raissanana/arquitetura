@@ -1,13 +1,12 @@
-# src/application/usecases/criar_resposta.py
 from application.dto.resposta_dto import CriarRespostaInputDTO, CriarRespostaOutputDTO
 from domain.entities.resposta import Resposta
-from domain.repositories.resposta_repository import RespostaRepository  # Importe a interface correta
+from domain.repositories.resposta_repository import RespostaRepository
 from .base_usecase import UseCase
 
 class CriarRespostaUseCase(UseCase[CriarRespostaInputDTO, CriarRespostaOutputDTO]):
     """Use Case para criar resposta"""
     
-    def __init__(self, resposta_repository: RespostaRepository):  # Tipo correto
+    def __init__(self, resposta_repository: RespostaRepository):
         self.resposta_repository = resposta_repository
     
     def execute(self, input_dto: CriarRespostaInputDTO) -> CriarRespostaOutputDTO:

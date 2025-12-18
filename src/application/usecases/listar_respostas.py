@@ -1,4 +1,3 @@
-# src/application/usecases/listar_respostas.py
 from ..dto.resposta_dto import ListarRespostasOutputDTO
 from domain.repositories.resposta_repository import RespostaRepository
 from .base_usecase import UseCase
@@ -10,7 +9,7 @@ class ListarRespostasUseCase(UseCase[None, ListarRespostasOutputDTO]):
         self.resposta_repository = resposta_repository
     
     def execute(self, input_dto: None = None) -> ListarRespostasOutputDTO:
-        respostas = self.resposta_repository.listar_respostas()  # ✅ PLURAL
+        respostas = self.resposta_repository.listar_respostas()
         
         # Converte entidades para dicionários
         respostas_dict = []

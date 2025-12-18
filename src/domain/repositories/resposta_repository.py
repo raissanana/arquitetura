@@ -1,4 +1,3 @@
-# src/domain/repositories/resposta_repository.py
 from abc import ABC, abstractmethod
 from typing import List
 from domain.entities.resposta import Resposta
